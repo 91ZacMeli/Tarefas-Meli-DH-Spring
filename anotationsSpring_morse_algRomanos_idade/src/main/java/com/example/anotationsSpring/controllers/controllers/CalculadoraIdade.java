@@ -19,17 +19,16 @@ public class CalculadoraIdade {
         int idade;
 
         if (mes < mesAtual) {
-                idade = anoAtual - ano;
-            }
-        else if (mes == mesAtual) {
+            idade = anoAtual - ano;
+        } else if (mes == mesAtual) {
             if (dia <= diaAtual) {
-                idade = anoAtual - ano ;
-            }else {
-                idade = anoAtual-ano-1;
+                idade = anoAtual - ano;
+            } else {
+                idade = anoAtual - ano - 1;
             }
         } else {
             idade = anoAtual - ano - 1;
         }
-        return "Data de Nascimento: "+dia+"/"+mes+"/"+ano+", Idade Atual : "+ idade+" anos";
+        return "Data de Nascimento: " + dia + "/" + mes + "/" + ano + ", Idade Atual : " + idade + " anos";
     }
 }

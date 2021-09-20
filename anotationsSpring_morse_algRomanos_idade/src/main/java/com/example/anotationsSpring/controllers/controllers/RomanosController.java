@@ -5,17 +5,17 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class RomanosController {
 
-    public int [] decimal = {1000000000,1000000,900000,500000,400000,100000,50000,40000,10000,9000,8000,7000,6000,5000,4000,1000,900,500,400,100,90,50,40,10,9, 5,4, 1};
-    public String [] romano = {"1_000_001_000","1_000_000","9_000_000","500_000","400_000","100_000","50_000","40_000","10_000","9_000","8_000","7_000" ,"6_000","5_000","4_000","M","CM","D","CD","C","XC","L","XL","X","IX", "V","IV","I"};
+    public int[] decimal = {1000000000, 1000000, 900000, 500000, 400000, 100000, 50000, 40000, 10000, 9000, 8000, 7000, 6000, 5000, 4000, 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+    public String[] romano = {"1_000_001_000", "1_000_000", "9_000_000", "500_000", "400_000", "100_000", "50_000", "40_000", "10_000", "9_000", "8_000", "7_000", "6_000", "5_000", "4_000", "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
     //chamada -> http://localhost:8080/convParaRomano/675496
     @GetMapping("convParaRomano/{number}")
-    public String roman(@PathVariable int number){
+    public String roman(@PathVariable int number) {
         StringBuilder romans = new StringBuilder();
         int descimal = number;
-        for(int i=0; i<decimal.length;i++){
-            while(number>=decimal[i]){
-                number-=decimal[i];
+        for (int i = 0; i < decimal.length; i++) {
+            while (number >= decimal[i]) {
+                number -= decimal[i];
                 romans.append(romano[i]);
             }
         }
